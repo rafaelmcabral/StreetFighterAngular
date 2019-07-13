@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">StreetFighterCards</string>
+    <string name="title_activity_main">StreetFighterCards</string>
+    <string name="package_name">com.rafaelmcabral.streetfightercards</string>
+    <string name="fileprovider_authority">com.rafaelmcabral.streetfightercards.fileprovider</string>
+    <string name="custom_url_scheme">com.rafaelmcabral.streetfightercards</string>
+</resources>

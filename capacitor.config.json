@@ -1,0 +1,7 @@
+{
+  "appId": "com.rafaelmcabral.streetfightercards",
+  "appName": "StreetFighterCards",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www"
+}
