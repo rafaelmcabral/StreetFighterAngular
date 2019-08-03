@@ -6,12 +6,14 @@ import { FightersComponent } from './containers/fighters/fighters.component';
 import { FighterComponent } from './containers/fighter/fighter.component';
 import { FighterListComponent } from './components/fighter-list/fighter-list.component';
 import { FighterDetailComponent } from './components/fighter-detail/fighter-detail.component';
+import {SharedModule} from '../core/shared/shared.module';
 
 
 @NgModule({
   declarations: [FightersComponent, FighterComponent, FighterListComponent, FighterDetailComponent],
   imports: [
     CommonModule,
+    SharedModule,
     StreetFighterRoutingModule
   ]
 })

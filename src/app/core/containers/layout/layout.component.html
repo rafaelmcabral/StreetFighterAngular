@@ -1,1 +1,26 @@
-<router-outlet></router-outlet>
+<mat-sidenav-container fxFlexFill>
+  <mat-sidenav mode="over" #sidenav>
+    <mat-nav-list>
+      <a (click)="sidenav.toggle()" href="" mat-list-item>
+        <mat-icon>close</mat-icon>Fechar
+      </a>
+      <mat-list-item routerLink="/core/layout/home" (click)="sidenav.toggle()">
+        <mat-icon>home</mat-icon>Home
+      </mat-list-item>
+      <mat-list-item routerLink="/core/layout/streetfighter" (click)="sidenav.toggle()">
+        <mat-icon>list_view</mat-icon>Lutadores
+      </mat-list-item>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content fxFlexFill>
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        Street Fighter Cards
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
