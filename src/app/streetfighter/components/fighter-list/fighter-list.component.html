@@ -1,5 +1,7 @@
-<mat-list>
-  <mat-list-item routerLink="../fighter">Ryu</mat-list-item>
-  <mat-list-item routerLink="../fighter">Chun-li</mat-list-item>
-  <mat-list-item routerLink="../fighter">Guile</mat-list-item>
-</mat-list>
+<mat-grid-list cols="4">
+  <mat-grid-tile *ngFor="let card of cards"
+                 (click)="select(card)" routerLink="../fighter">
+    {{card.name}}
+    <img src="{{card.thumbnail}}" style="width: 200px" />
+  </mat-grid-tile>
+</mat-grid-list>

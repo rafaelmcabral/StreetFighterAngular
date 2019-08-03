@@ -7,6 +7,8 @@ import { FighterComponent } from './containers/fighter/fighter.component';
 import { FighterListComponent } from './components/fighter-list/fighter-list.component';
 import { FighterDetailComponent } from './components/fighter-detail/fighter-detail.component';
 import {SharedModule} from '../core/shared/shared.module';
+import {StoreModule} from '@ngrx/store';
+import {fighterReducer} from './store/reducers/global.reducer';
 
 
 @NgModule({
@@ -14,7 +16,8 @@ import {SharedModule} from '../core/shared/shared.module';
   imports: [
     CommonModule,
     SharedModule,
-    StreetFighterRoutingModule
+    StreetFighterRoutingModule,
+    StoreModule.forFeature('fighter', fighterReducer)
   ]
 })
 export class StreetFighterModule { }

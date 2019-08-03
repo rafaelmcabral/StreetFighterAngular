@@ -1,1 +1,19 @@
-<p>fighter-detail works!</p>
+<div class="container" fxLayout="start">
+  <form [formGroup]="fighterForm">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>{{fighterForm.value?.name}}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-form-field>
+            <input matInput type="text" placeholder="Thumbnail link" formControlName="thumbnail" width="100%">
+        </mat-form-field><br />
+        <img src="{{fighterForm.value?.thumbnail}}" />
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button routerLink="../fighters" (click)="update()">Atualizar</button>
+        <button mat-button routerLink="../fighters" (click)="unselect()">Voltar</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</div>
