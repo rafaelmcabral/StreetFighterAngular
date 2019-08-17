@@ -1,6 +1,11 @@
 import {createAction, props} from '@ngrx/store';
 import {Fighter} from '../../model/fighter.model';
 
+export const updateCardsList = createAction(
+  '[Cards] Update cards list.',
+  props<{cards: Fighter[]}>()
+)
+
 export const createCard = createAction(
   '[Cards] Create card.',
   props<{card: Fighter}>()

@@ -9,6 +9,8 @@ import { FighterDetailComponent } from './components/fighter-detail/fighter-deta
 import {SharedModule} from '../core/shared/shared.module';
 import {StoreModule} from '@ngrx/store';
 import {fighterReducer} from './store/reducers/global.reducer';
+import {EffectsModule} from '@ngrx/effects';
+import {CardsEffects} from './store/effects/cards.effects';
 
 
 @NgModule({
@@ -17,7 +19,8 @@ import {fighterReducer} from './store/reducers/global.reducer';
     CommonModule,
     SharedModule,
     StreetFighterRoutingModule,
-    StoreModule.forFeature('fighter', fighterReducer)
+    StoreModule.forFeature('fighter', fighterReducer),
+    EffectsModule.forFeature([CardsEffects])
   ]
 })
 export class StreetFighterModule { }

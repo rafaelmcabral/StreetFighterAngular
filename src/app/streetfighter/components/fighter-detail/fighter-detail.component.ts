@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Fighter} from '../../model/fighter.model';
-import {selectCard, unselectCard, updateCard} from '../../store/actions/cards.actions';
+import {createCard, selectCard, unselectCard, updateCard} from '../../store/actions/cards.actions';
 import {Action} from '@ngrx/store';
 import {FormBuilder} from '@angular/forms';
 
@@ -14,7 +14,8 @@ export class FighterDetailComponent implements OnInit {
   fighterForm = this.fb.group({
     id: [''],
     name: [''],
-    thumbnail: ['']
+    country: [''],
+    fightingStyle: ['']
   });
 
   @Input()
@@ -35,7 +36,15 @@ export class FighterDetailComponent implements OnInit {
   }
 
   update() {
-    this.actionEmitter.emit(updateCard({card: this.fighterForm.value}));
+    if (this.fighterForm.get('id') && this.fighterForm.get('id').value !== '') {
+      this.actionEmitter.emit(updateCard({card: this.fighterForm.value}));
+    } else {
+      this.actionEmitter.emit(createCard({card: this.fighterForm.value}));
+    }
+  }
+
+  delete() {
+
   }
 
 }

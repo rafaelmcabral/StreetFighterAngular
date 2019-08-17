@@ -1,19 +1,30 @@
-<div class="container" fxLayout="start">
-  <form [formGroup]="fighterForm">
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>{{fighterForm.value?.name}}</mat-card-title>
-      </mat-card-header>
-      <mat-card-content>
-        <mat-form-field>
-            <input matInput type="text" placeholder="Thumbnail link" formControlName="thumbnail" width="100%">
-        </mat-form-field><br />
-        <img src="{{fighterForm.value?.thumbnail}}" />
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-button routerLink="../fighters" (click)="update()">Atualizar</button>
-        <button mat-button routerLink="../fighters" (click)="unselect()">Voltar</button>
-      </mat-card-actions>
-    </mat-card>
-  </form>
-</div>
+<form [formGroup]="fighterForm">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <label *ngIf="fighterForm.get('id').value">Editar</label>
+        <label *ngIf="!fighterForm.get('id').value">Novo</label>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field>
+        <input matInput type="text" placeholder="Name" formControlName="name" value="{{fighterForm.value?.name}}" required>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-content>
+      <mat-form-field>
+        <input matInput type="text" placeholder="Country" formControlName="country" value="{{fighterForm.value?.country}}" required>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-content>
+      <mat-form-field>
+        <input matInput type="text" placeholder="Fighting Style" formControlName="fightingStyle" value="{{fighterForm.value?.fightingStyle}}" required>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-flat-button routerLink="../fighters" [disabled]="fighterForm.invalid" (click)="!fighterForm.invalid && update()" color="primary">Salvar</button>
+      <button mat-flat-button *ngIf="fighterForm.get('id').value" (click)="delete()" color="primary">Excluir</button>
+      <button mat-flat-button routerLink="../fighters" (click)="unselect()" color="primary">Voltar</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

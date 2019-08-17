@@ -12,19 +12,19 @@ export interface CardsState extends EntityState<Fighter> {
   card?: Fighter;
 }
 
-const pog = [
-  {id: 1, name: 'Ryu', thumbnail: 'https://vignette.wikia.nocookie.net/streetfighter/images/4/46/Ryurender.png/revision/latest?cb=20170728171704'},
-  {id: 2, name: 'Chun-li', thumbnail: 'https://vignette.wikia.nocookie.net/streetfighter/images/e/e3/Chunrender.png/revision/latest?cb=20170728163823'},
-  {id: 3, name: 'Guile', thumbnail: 'https://vignette.wikia.nocookie.net/streetfighter/images/a/a2/Guilerender.png/revision/latest?cb=20170728164132'},
-  {id: 4, name: 'Zangief', thumbnail: 'https://vignette.wikia.nocookie.net/streetfighter/images/8/88/Zangiefrender.png/revision/latest/scale-to-width-down/350?cb=20170728171808'},
-  {id: 5, name: 'Dhalsim', thumbnail: 'https://vignette.wikia.nocookie.net/streetfighter/images/b/b1/Dhalsimrender.png/revision/latest/scale-to-width-down/350?cb=20170728164253'},
-  {id: 6, name: 'Ken', thumbnail: 'https://vignette.wikia.nocookie.net/streetfighter/images/b/b4/Kenrender.png/revision/latest/scale-to-width-down/350?cb=20170728171332'},
-  {id: 7, name: 'Cammy', thumbnail: 'https://vignette.wikia.nocookie.net/streetfighter/images/1/19/Cammyrender.png/revision/latest/scale-to-width-down/350?cb=20170728163129'},
-  {id: 8, name: 'Blanka', thumbnail: 'https://vignette.wikia.nocookie.net/streetfighter/images/8/80/BLK_00.png/revision/latest/scale-to-width-down/350?cb=20180425080106'}
-];
+// const pog = [
+//  {id: 1, name: 'Ryu',  country: 'Japan', fightingStyle: 'Karate'},
+//  {id: 2, name: 'Chun-li',  country: 'China', fightingStyle: 'Kung Fu'},
+//  {id: 3, name: 'Guile',  country: 'USA', fightingStyle: 'Military Fighting' },
+//  {id: 4, name: 'Zangief',  country: 'Russia', fightingStyle: 'Wrestling'},
+//  {id: 5, name: 'Dhalsim',  country: 'India', fightingStyle: 'Yoga'},
+//  {id: 6, name: 'Ken',  country: 'USA', fightingStyle: 'Karate' },
+//  {id: 7, name: 'Cammy',  country: 'England', fightingStyle: 'Military Special Forces Fighting Style' },
+//  {id: 8, name: 'Blanka',  country: 'Brazil', fightingStyle: 'Jungle Wild Fighting Style' }
+// ];
 
-// const initialState = cardAdapter.getInitialState();
-const initialState = cardAdapter.addAll(pog, cardAdapter.getInitialState());
+const initialState = cardAdapter.getInitialState();
+// const initialState = cardAdapter.addAll(pog, cardAdapter.getInitialState());
 
 const reducer = createReducer(
   initialState,
