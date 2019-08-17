@@ -1,6 +1,6 @@
 import {Fighter} from '../../model/fighter.model';
 import {Action, createReducer, on} from '@ngrx/store';
-import {createCard, deleteCard, selectCard, unselectCard, updateCard} from '../actions/cards.actions';
+import {createCard, deleteCard, selectCard, unselectCard, updateCard, updateCardsList} from '../actions/cards.actions';
 import {createEntityAdapter, EntityState} from '@ngrx/entity';
 
 export const cardAdapter = createEntityAdapter<Fighter>( {
@@ -28,15 +28,13 @@ const initialState = cardAdapter.getInitialState();
 
 const reducer = createReducer(
   initialState,
+  on(updateCardsList, (state, {cards}) => cardAdapter.addAll(cards, state)),
   on(selectCard, (state, {card}) => ({...state, card})),
-  on(unselectCard, (state: CardsState) => {
+  on(unselectCard, updateCard, (state: CardsState) => {
     const {card, ...rest} = state;
     return rest;
   }),
   on(createCard, (state, {card}) => cardAdapter.addOne(card, state)),
-  on(updateCard, (state, {card}) =>
-    cardAdapter.updateOne({id: card.id, changes: card}, state)
-  ),
   on(deleteCard, (state, {id}) => cardAdapter.removeOne(id, state))
 );
 

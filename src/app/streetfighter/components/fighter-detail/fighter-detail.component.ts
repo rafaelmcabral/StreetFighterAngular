@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Fighter} from '../../model/fighter.model';
-import {createCard, selectCard, unselectCard, updateCard} from '../../store/actions/cards.actions';
+import {createCard, deleteCard, selectCard, unselectCard, updateCard} from '../../store/actions/cards.actions';
 import {Action} from '@ngrx/store';
 import {FormBuilder} from '@angular/forms';
 
@@ -44,7 +44,7 @@ export class FighterDetailComponent implements OnInit {
   }
 
   delete() {
-
+    this.actionEmitter.emit(deleteCard({id: this.fighterForm.get('id').value}));
   }
 
 }

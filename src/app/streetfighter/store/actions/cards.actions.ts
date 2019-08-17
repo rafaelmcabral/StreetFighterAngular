@@ -18,7 +18,7 @@ export const updateCard = createAction(
 
 export const deleteCard = createAction(
   '[Cards] Delete cards.',
-  props<{id: number}>()
+  props<{id: string}>()
 );
 
 export const selectCard = createAction(

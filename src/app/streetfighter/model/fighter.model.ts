@@ -1,5 +1,5 @@
 export interface Fighter {
-  id: number;
+  id: string;
   name: string;
   country: string;
   fightingStyle: string;
