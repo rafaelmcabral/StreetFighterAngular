@@ -30,12 +30,12 @@ const reducer = createReducer(
   initialState,
   on(updateCardsList, (state, {cards}) => cardAdapter.addAll(cards, state)),
   on(selectCard, (state, {card}) => ({...state, card})),
-  on(unselectCard, updateCard, (state: CardsState) => {
+  on(unselectCard, updateCard, createCard, deleteCard, (state: CardsState) => {
     const {card, ...rest} = state;
     return rest;
-  }),
-  on(createCard, (state, {card}) => cardAdapter.addOne(card, state)),
-  on(deleteCard, (state, {id}) => cardAdapter.removeOne(id, state))
+  })// ,
+  // on(createCard, (state, {card}) => cardAdapter.addOne(card, state)),
+  // on(deleteCard, (state, {id}) => cardAdapter.removeOne(id, state))
 );
 
 export function reducerCards(state: CardsState, action: Action) {

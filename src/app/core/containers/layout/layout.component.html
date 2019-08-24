@@ -10,6 +10,14 @@
       <mat-list-item routerLink="/core/layout/streetfighter" (click)="sidenav.toggle()">
         <mat-icon>list_view</mat-icon>Lutadores
       </mat-list-item>
+      <mat-list-item routerLink="/core/layout/login" *ngIf="isAuthenticated$ | async else login" (click)="logout(); sidenav.toggle()">
+        <mat-icon>close</mat-icon>Logout
+      </mat-list-item>
+      <ng-template #login>
+        <mat-list-item routerLink="/core/layout/login" (click)="sidenav.toggle()">
+          <mat-icon>person</mat-icon>Login
+        </mat-list-item>
+      </ng-template>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content fxFlexFill>

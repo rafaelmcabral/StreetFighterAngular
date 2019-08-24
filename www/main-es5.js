@@ -30,29 +30,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<router-outlet></router-outlet>\n"
-
-/***/ }),
-
-/***/ "./node_modules/raw-loader/index.js!./src/app/core/containers/home/home.component.html":
-/*!************************************************************************************!*\
-  !*** ./node_modules/raw-loader!./src/app/core/containers/home/home.component.html ***!
-  \************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<p>Home works now!</p>\n"
-
-/***/ }),
-
-/***/ "./node_modules/raw-loader/index.js!./src/app/core/containers/layout/layout.component.html":
-/*!****************************************************************************************!*\
-  !*** ./node_modules/raw-loader!./src/app/core/containers/layout/layout.component.html ***!
-  \****************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<mat-sidenav-container fxFlexFill>\n  <mat-sidenav mode=\"over\" #sidenav>\n    <mat-nav-list>\n      <a (click)=\"sidenav.toggle()\" href=\"\" mat-list-item>\n        <mat-icon>close</mat-icon>Fechar\n      </a>\n      <mat-list-item routerLink=\"/core/layout/home\" (click)=\"sidenav.toggle()\">\n        <mat-icon>home</mat-icon>Home\n      </mat-list-item>\n      <mat-list-item routerLink=\"/core/layout/streetfighter\" (click)=\"sidenav.toggle()\">\n        <mat-icon>list_view</mat-icon>Lutadores\n      </mat-list-item>\n    </mat-nav-list>\n  </mat-sidenav>\n  <mat-sidenav-content fxFlexFill>\n    <mat-toolbar color=\"primary\">\n      <mat-toolbar-row>\n        <button mat-icon-button (click)=\"sidenav.toggle()\">\n          <mat-icon>menu</mat-icon>\n        </button>\n        Street Fighter Cards\n      </mat-toolbar-row>\n    </mat-toolbar>\n    <router-outlet></router-outlet>\n  </mat-sidenav-content>\n</mat-sidenav-container>\n"
+module.exports = "<router-outlet></router-outlet>\r\n"
 
 /***/ }),
 
@@ -69,14 +47,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _core_core_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./core/core.module */ "./src/app/core/core.module.ts");
-
 
 
 
 var routes = [
     { path: '', pathMatch: 'full', redirectTo: 'core' },
-    { path: 'core', loadChildren: function () { return _core_core_module__WEBPACK_IMPORTED_MODULE_3__["CoreModule"]; } }
+    { path: 'core', loadChildren: function () { return __webpack_require__.e(/*! import() | core-core-module */ "core-core-module").then(__webpack_require__.bind(null, /*! ./core/core.module */ "./src/app/core/core.module.ts")).then(function (m) { return m.CoreModule; }); } }
 ];
 var AppRoutingModule = /** @class */ (function () {
     function AppRoutingModule() {
@@ -153,6 +129,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
 /* harmony import */ var _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/platform-browser/animations */ "./node_modules/@angular/platform-browser/fesm5/animations.js");
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+/* harmony import */ var _reducers__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./reducers */ "./src/app/reducers/index.ts");
+/* harmony import */ var _ngrx_store_devtools__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @ngrx/store-devtools */ "./node_modules/@ngrx/store-devtools/fesm5/store-devtools.js");
+/* harmony import */ var _angular_fire__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/fire */ "./node_modules/@angular/fire/index.js");
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _ngrx_router_store__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @ngrx/router-store */ "./node_modules/@ngrx/router-store/fesm5/router-store.js");
+/* harmony import */ var _reducers_custom_route_serializer__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./reducers/custom-route-serializer */ "./src/app/reducers/custom-route-serializer.ts");
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
+/* harmony import */ var _store_effects_app_effects__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./store/effects/app.effects */ "./src/app/store/effects/app.effects.ts");
+/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/firestore/index.js");
+/* harmony import */ var _angular_fire_auth__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @angular/fire/auth */ "./node_modules/@angular/fire/auth/index.js");
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -170,7 +168,22 @@ var AppModule = /** @class */ (function () {
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
-                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__["NoopAnimationsModule"]
+                _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_5__["NoopAnimationsModule"],
+                _ngrx_store__WEBPACK_IMPORTED_MODULE_6__["StoreModule"].forRoot(_reducers__WEBPACK_IMPORTED_MODULE_7__["reducers"], {
+                    metaReducers: _reducers__WEBPACK_IMPORTED_MODULE_7__["metaReducers"],
+                    runtimeChecks: {
+                        strictStateImmutability: true,
+                        strictActionImmutability: true
+                    }
+                }),
+                _ngrx_store_devtools__WEBPACK_IMPORTED_MODULE_8__["StoreDevtoolsModule"].instrument({ maxAge: 25, logOnly: _environments_environment__WEBPACK_IMPORTED_MODULE_10__["environment"].production, actionsBlocklist: ['\\[Core - Auth\\]'] }),
+                _ngrx_router_store__WEBPACK_IMPORTED_MODULE_11__["StoreRouterConnectingModule"].forRoot({
+                    serializer: _reducers_custom_route_serializer__WEBPACK_IMPORTED_MODULE_12__["CustomSerializer"]
+                }),
+                _angular_fire__WEBPACK_IMPORTED_MODULE_9__["AngularFireModule"].initializeApp(_environments_environment__WEBPACK_IMPORTED_MODULE_10__["environment"].firebase),
+                _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_15__["AngularFirestoreModule"],
+                _angular_fire_auth__WEBPACK_IMPORTED_MODULE_16__["AngularFireAuthModule"],
+                _ngrx_effects__WEBPACK_IMPORTED_MODULE_13__["EffectsModule"].forRoot([_store_effects_app_effects__WEBPACK_IMPORTED_MODULE_14__["AppEffects"]])
             ],
             providers: [],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
@@ -183,262 +196,114 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/core/containers/home/home.component.scss":
-/*!**********************************************************!*\
-  !*** ./src/app/core/containers/home/home.component.scss ***!
-  \**********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvcmUvY29udGFpbmVycy9ob21lL2hvbWUuY29tcG9uZW50LnNjc3MifQ== */"
-
-/***/ }),
-
-/***/ "./src/app/core/containers/home/home.component.ts":
-/*!********************************************************!*\
-  !*** ./src/app/core/containers/home/home.component.ts ***!
-  \********************************************************/
-/*! exports provided: HomeComponent */
+/***/ "./src/app/reducers/custom-route-serializer.ts":
+/*!*****************************************************!*\
+  !*** ./src/app/reducers/custom-route-serializer.ts ***!
+  \*****************************************************/
+/*! exports provided: CustomSerializer */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomeComponent", function() { return HomeComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-
-
-var HomeComponent = /** @class */ (function () {
-    function HomeComponent() {
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CustomSerializer", function() { return CustomSerializer; });
+var CustomSerializer = /** @class */ (function () {
+    function CustomSerializer() {
     }
-    HomeComponent.prototype.ngOnInit = function () {
+    CustomSerializer.prototype.serialize = function (routerState) {
+        var route = routerState.root;
+        while (route.firstChild) {
+            route = route.firstChild;
+        }
+        var url = routerState.url, queryParams = routerState.root.queryParams;
+        var params = route.params;
+        // Only return an object including the URL, params and query params
+        // instead of the entire snapshot
+        return { url: url, params: params, queryParams: queryParams };
     };
-    HomeComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-home',
-            template: __webpack_require__(/*! raw-loader!./home.component.html */ "./node_modules/raw-loader/index.js!./src/app/core/containers/home/home.component.html"),
-            styles: [__webpack_require__(/*! ./home.component.scss */ "./src/app/core/containers/home/home.component.scss")]
-        })
-    ], HomeComponent);
-    return HomeComponent;
+    return CustomSerializer;
 }());
 
 
 
 /***/ }),
 
-/***/ "./src/app/core/containers/layout/layout.component.scss":
-/*!**************************************************************!*\
-  !*** ./src/app/core/containers/layout/layout.component.scss ***!
-  \**************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2NvcmUvY29udGFpbmVycy9sYXlvdXQvbGF5b3V0LmNvbXBvbmVudC5zY3NzIn0= */"
-
-/***/ }),
-
-/***/ "./src/app/core/containers/layout/layout.component.ts":
-/*!************************************************************!*\
-  !*** ./src/app/core/containers/layout/layout.component.ts ***!
-  \************************************************************/
-/*! exports provided: LayoutComponent */
+/***/ "./src/app/reducers/index.ts":
+/*!***********************************!*\
+  !*** ./src/app/reducers/index.ts ***!
+  \***********************************/
+/*! exports provided: reducers, metaReducers */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LayoutComponent", function() { return LayoutComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "reducers", function() { return reducers; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "metaReducers", function() { return metaReducers; });
+/* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var _ngrx_router_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @ngrx/router-store */ "./node_modules/@ngrx/router-store/fesm5/router-store.js");
 
 
-var LayoutComponent = /** @class */ (function () {
-    function LayoutComponent() {
-    }
-    LayoutComponent.prototype.ngOnInit = function () {
-    };
-    LayoutComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-layout',
-            template: __webpack_require__(/*! raw-loader!./layout.component.html */ "./node_modules/raw-loader/index.js!./src/app/core/containers/layout/layout.component.html"),
-            styles: [__webpack_require__(/*! ./layout.component.scss */ "./src/app/core/containers/layout/layout.component.scss")]
-        })
-    ], LayoutComponent);
-    return LayoutComponent;
-}());
-
+var reducers = {
+    router: _ngrx_router_store__WEBPACK_IMPORTED_MODULE_1__["routerReducer"]
+};
+var metaReducers = !_environments_environment__WEBPACK_IMPORTED_MODULE_0__["environment"].production ? [] : [];
 
 
 /***/ }),
 
-/***/ "./src/app/core/core-routing.module.ts":
-/*!*********************************************!*\
-  !*** ./src/app/core/core-routing.module.ts ***!
-  \*********************************************/
-/*! exports provided: CoreRoutingModule */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CoreRoutingModule", function() { return CoreRoutingModule; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _containers_layout_layout_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./containers/layout/layout.component */ "./src/app/core/containers/layout/layout.component.ts");
-/* harmony import */ var _containers_home_home_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./containers/home/home.component */ "./src/app/core/containers/home/home.component.ts");
-
-
-
-
-
-var routes = [
-    { path: '', pathMatch: 'full', redirectTo: 'layout' },
-    { path: 'layout', component: _containers_layout_layout_component__WEBPACK_IMPORTED_MODULE_3__["LayoutComponent"], children: [
-            { path: '', pathMatch: 'full', redirectTo: 'home' },
-            { path: 'home', component: _containers_home_home_component__WEBPACK_IMPORTED_MODULE_4__["HomeComponent"] },
-            { path: 'streetfighter', loadChildren: function () { return __webpack_require__.e(/*! import() | streetfighter-street-fighter-module */ "streetfighter-street-fighter-module").then(__webpack_require__.bind(null, /*! ../streetfighter/street-fighter.module */ "./src/app/streetfighter/street-fighter.module.ts")).then(function (mod) { return mod.StreetFighterModule; }); } }
-        ] }
-];
-var CoreRoutingModule = /** @class */ (function () {
-    function CoreRoutingModule() {
-    }
-    CoreRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            imports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"].forChild(routes)],
-            exports: [_angular_router__WEBPACK_IMPORTED_MODULE_2__["RouterModule"]]
-        })
-    ], CoreRoutingModule);
-    return CoreRoutingModule;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/core/core.module.ts":
-/*!*************************************!*\
-  !*** ./src/app/core/core.module.ts ***!
-  \*************************************/
-/*! exports provided: CoreModule */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CoreModule", function() { return CoreModule; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _core_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./core-routing.module */ "./src/app/core/core-routing.module.ts");
-/* harmony import */ var _containers_layout_layout_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./containers/layout/layout.component */ "./src/app/core/containers/layout/layout.component.ts");
-/* harmony import */ var _containers_home_home_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./containers/home/home.component */ "./src/app/core/containers/home/home.component.ts");
-/* harmony import */ var _shared_shared_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./shared/shared.module */ "./src/app/core/shared/shared.module.ts");
-
-
-
-
-
-
-
-var CoreModule = /** @class */ (function () {
-    function CoreModule() {
-    }
-    CoreModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            declarations: [_containers_layout_layout_component__WEBPACK_IMPORTED_MODULE_4__["LayoutComponent"], _containers_home_home_component__WEBPACK_IMPORTED_MODULE_5__["HomeComponent"]],
-            imports: [
-                _angular_common__WEBPACK_IMPORTED_MODULE_2__["CommonModule"],
-                _core_routing_module__WEBPACK_IMPORTED_MODULE_3__["CoreRoutingModule"],
-                _shared_shared_module__WEBPACK_IMPORTED_MODULE_6__["SharedModule"]
-            ]
-        })
-    ], CoreModule);
-    return CoreModule;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/core/shared/material/material.module.ts":
-/*!*********************************************************!*\
-  !*** ./src/app/core/shared/material/material.module.ts ***!
-  \*********************************************************/
-/*! exports provided: MaterialModule */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MaterialModule", function() { return MaterialModule; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "./node_modules/@angular/material/esm5/material.es5.js");
-
-
-
-var MaterialModule = /** @class */ (function () {
-    function MaterialModule() {
-    }
-    MaterialModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            declarations: [],
-            imports: [
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatButtonModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatIconModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatListModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSidenavModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatToolbarModule"]
-            ],
-            exports: [
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatButtonModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatIconModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatListModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatSidenavModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatToolbarModule"]
-            ]
-        })
-    ], MaterialModule);
-    return MaterialModule;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/core/shared/shared.module.ts":
+/***/ "./src/app/store/actions/app.actions.ts":
 /*!**********************************************!*\
-  !*** ./src/app/core/shared/shared.module.ts ***!
+  !*** ./src/app/store/actions/app.actions.ts ***!
   \**********************************************/
-/*! exports provided: SharedModule */
+/*! exports provided: navigateTo */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SharedModule", function() { return SharedModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "navigateTo", function() { return navigateTo; });
+/* harmony import */ var _ngrx_store__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @ngrx/store */ "./node_modules/@ngrx/store/fesm5/store.js");
+
+var navigateTo = Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["createAction"])('[App] Navigate to.', Object(_ngrx_store__WEBPACK_IMPORTED_MODULE_0__["props"])());
+
+
+/***/ }),
+
+/***/ "./src/app/store/effects/app.effects.ts":
+/*!**********************************************!*\
+  !*** ./src/app/store/effects/app.effects.ts ***!
+  \**********************************************/
+/*! exports provided: AppEffects */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppEffects", function() { return AppEffects; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _material_material_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./material/material.module */ "./src/app/core/shared/material/material.module.ts");
-/* harmony import */ var _angular_flex_layout__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/flex-layout */ "./node_modules/@angular/flex-layout/esm5/flex-layout.es5.js");
+/* harmony import */ var _ngrx_effects__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ngrx/effects */ "./node_modules/@ngrx/effects/fesm5/effects.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _actions_app_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../actions/app.actions */ "./src/app/store/actions/app.actions.ts");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
 
 
 
 
-var SharedModule = /** @class */ (function () {
-    function SharedModule() {
+
+
+var AppEffects = /** @class */ (function () {
+    function AppEffects(actions$, router) {
+        var _this = this;
+        this.actions$ = actions$;
+        this.router = router;
+        this.navigateTo$ = Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["createEffect"])(function () { return _this.actions$.pipe(Object(_ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["ofType"])(_actions_app_actions__WEBPACK_IMPORTED_MODULE_4__["navigateTo"]), Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_5__["tap"])(function (action) { return _this.router.navigate(action.commands); })); }, { dispatch: false });
     }
-    SharedModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
-            declarations: [],
-            imports: [
-                _material_material_module__WEBPACK_IMPORTED_MODULE_2__["MaterialModule"],
-                _angular_flex_layout__WEBPACK_IMPORTED_MODULE_3__["FlexLayoutModule"]
-            ],
-            exports: [
-                _material_material_module__WEBPACK_IMPORTED_MODULE_2__["MaterialModule"],
-                _angular_flex_layout__WEBPACK_IMPORTED_MODULE_3__["FlexLayoutModule"]
-            ]
-        })
-    ], SharedModule);
-    return SharedModule;
+    AppEffects.ctorParameters = function () { return [
+        { type: _ngrx_effects__WEBPACK_IMPORTED_MODULE_2__["Actions"] },
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
+    ]; };
+    AppEffects = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])()
+    ], AppEffects);
+    return AppEffects;
 }());
 
 
@@ -459,7 +324,16 @@ __webpack_require__.r(__webpack_exports__);
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 var environment = {
-    production: false
+    production: false,
+    firebase: {
+        apiKey: 'AIzaSyD8CQry8nIocxUeU0q1IDLzojHCxZtBpqA',
+        authDomain: 'streetfightercards.firebaseapp.com',
+        databaseURL: 'https://streetfightercards.firebaseio.com',
+        projectId: 'streetfightercards',
+        storageBucket: '',
+        messagingSenderId: '969211382698',
+        appId: '1:969211382698:web:9abccd5f5671826f'
+    }
 };
 /*
  * For easier debugging in development mode, you can import the following file
@@ -509,7 +383,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\clayton.chagas\Documents\AngularExemplo\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\clayton.chagas\Projetos\StreetFighterAngular\src\main.ts */"./src/main.ts");
 
 
 /***/ })

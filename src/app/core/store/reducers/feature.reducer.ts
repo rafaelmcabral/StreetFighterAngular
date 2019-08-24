@@ -1,4 +1,4 @@
-import {AuthState, authReducer} from '../reducers/auth.reducer';
+import {AuthState, authReducer} from './auth.reducer';
 import {ActionReducerMap, createFeatureSelector} from '@ngrx/store';
 
 export interface CoreState {
